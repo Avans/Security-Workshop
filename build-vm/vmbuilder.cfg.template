@@ -1,0 +1,13 @@
+[DEFAULT]
+arch = i386
+user = security
+name = Security Workshop
+pass = security
+copy = BUILDDIR/vmbuilder.copy
+execscript = BUILDDIR/vmbuilder.postinst
+verbose = true
+
+[ubuntu]
+flavour = virtual
+addpkg = apache2, git-core, php5-cli, php5-mysql, libapache2-mod-php5, mysql-server, mysql-client
+hostname = security-workshop

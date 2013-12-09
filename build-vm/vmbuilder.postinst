@@ -1,0 +1,4 @@
+#!/bin/sh
+
+chroot $1 git clone https://github.com/Avans/Security-Workshop.git /home/security/workshop
+
