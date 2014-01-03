@@ -1,4 +1,7 @@
 #!/bin/sh
+echo
+cd /home/security/workshop
+git pull origin master
 
 IP=`ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print \$1}'`
 
