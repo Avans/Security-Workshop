@@ -13,6 +13,10 @@ a2dissite 000-default
 a2ensite security-workshop
 service apache2 reload
 
+# Update database
+echo "Resetting database"
+mysql -u root < build-vm/database.sql
+
 # Show welcome message
 IP=`ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print \$1}'`
 

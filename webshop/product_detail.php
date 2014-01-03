@@ -53,10 +53,10 @@
 /**
  * Maak verbinding met de database
  */
-$connection = mysql_connect('localhost', 'webshop_sql1', 'pass')
+$connection = mysql_connect('localhost', 'webshop', 'pass')
     or die('Kan geen verbinding maken met MySQL');
 
-$db = mysql_select_db('webshop', $connection)
+$db = mysql_select_db('webshop_sql1', $connection)
   or die('Could not select database');
 
 $query = 'SELECT naam, afbeelding, beschrijving, prijs FROM producten WHERE id = ' . $_GET['id'];
