@@ -23,7 +23,7 @@ DROP DATABASE temp;
 CREATE USER 'webshop'@'localhost' IDENTIFIED BY 'pass';
 GRANT ALL PRIVILEGES ON  `webshop\_%` . * TO  'webshop'@'localhost';
 
-DROP DATABASE webshop_sql1;
+DROP DATABASE IF EXISTS webshop_sql1;
 CREATE DATABASE webshop_sql1;
 USE webshop_sql1;
 
