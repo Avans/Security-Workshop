@@ -34,54 +34,59 @@
 
      <hr />
 
-	<div class="span4 signin-container">
-
-        <form class="form-signin">
-            <h3 class="form-signin-heading">Inloggen Mijn Poespas</h3>
-            <input type="text" class="input-block-level" placeholder="Gebruikersnaam">
-            <input type="text" class="input-block-level" placeholder="Wachtwoord">
-        <button class="btn btn-primary" type="submit">Inloggen</button>
-     </form>
-    </div>
-
-
-
-
 <?php
+if($_POST) {
+    /**
+     * Maak verbinding met de database
+     */
+    $connection = mysql_connect('localhost', 'bank', 'pass')
+        or die('Kan geen verbinding maken met MySQL');
 
-/**
- * Maak verbinding met de database
- */
-$connection = mysql_connect('localhost', 'webshop', 'pass')
-    or die('Kan geen verbinding maken met MySQL');
+    $db = mysql_select_db('bank', $connection)
+      or die('Kan de database niet selecteren');
 
-$db = mysql_select_db('webshop_sql1', $connection)
-  or die('Kan de database niet selecteren');
+    /**
+     * Zoek gebruiker in de database met de juiste gebruikersnaam en wachtwoord
+     */
+    $query = "SELECT * FROM gebruikers WHERE gebruikersnaam = '" . $_POST['gebruikersnaam'] . "' AND wachtwoord = '" . $_POST['wachtwoord'] . "'";
 
+    $result = mysql_query($query)
+      or die('<div class="alert alert-danger">Query error: <pre>' . mysql_error() . '</pre>Query: <code>' . $query . '</code> </div>');
 
-$result = mysql_query("SELECT * FROM producten")
-  or die('Query error: ' . mysql_error());
+    /**
+     * Kijk of de query iets heeft teruggegeven. Anders geven we een error
+     */
+    if(mysql_num_rows($result) == 0) {
+       die('<div class="alert alert-danger">Inlog gegevens niet correct</div>');
+    } else {
 
-while ($row = mysql_fetch_array($result)) {
+        /**
+         * Gebruiker heeft correct ingelogd. Laat zijn balans zien
+         */
+         $row = mysql_fetch_array($result);
+
+         echo "<div class=\"well\">Welkom terug " . $row['gebruikersnaam'] . "! ";
+         echo "Uw balans is op dit moment: <b>" . $row['balans'] . "</b></div>";
+    }
+    mysql_close($connection);
+} else {
+
+    /**
+     * Laat inlogformulier zien
+     */
 ?>
+    <div class="span4 signin-container">
 
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_detail.php?id=<?php echo $row['id'] ?>"><img src="/themes/images/products/<?php echo $row['afbeelding']; ?>" alt=""/></a>
-				<div class="caption">
-				  <h5><?php echo $row['naam']?></h5>
-				  <p>
-					<?php echo $row['beschrijving'] ?>
-				  </p>
-				   <h4 style="text-align:center"><a class="btn btn-primary" href="product_detail.php?id=<?php echo $row['id'] ?>">&euro;<?php echo $row['prijs'] ?></a></h4>
-				</div>
-			  </div>
-			</li>
+         <form class="form-signin" method="POST">
+             <h3 class="form-signin-heading">Inloggen Mijn Poespas</h3>
+             <input type="text" name="gebruikersnaam" class="input-block-level" placeholder="Gebruikersnaam">
+             <input type="text" name="wachtwoord" class="input-block-level" placeholder="Wachtwoord">
+         <button class="btn btn-primary" type="submit">Inloggen</button>
+      </form>
+     </div>
 
 <?php
 }
-
-mysql_close($connection);
 ?>
 		  </ul>
 	<hr class="soft"/>
