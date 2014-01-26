@@ -1,0 +1,31 @@
+.navbar {
+    border-bottom: 7px solid #ff6600;
+}
+
+.brand {
+    width: 70%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+    display: block;
+}
+
+.navbar p {
+    text-align: center;
+}
+
+.signin-container {
+    margin-top: 30px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+}
+
+h3 {
+    color: #ff6600 !important;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to bottom,#ff6600,#ee4400) !important;
+    background-color: red !important;
+}
