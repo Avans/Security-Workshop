@@ -1,3 +1,8 @@
+
+-- Don't look here for answers you cheater. 
+-- Go out there and actually hack those sites!
+
+
 -- Recreate webshop user
 -- (really long procedure for non existing 'DROP USER IF EXISTS' construct in MySQL)
 -- See: http://bugs.mysql.com/bug.php?id=19166
