@@ -1,4 +1,3 @@
-
 -- Don't look here for answers you cheater. 
 -- Go out there and actually hack those sites!
 
@@ -59,9 +58,9 @@ CREATE TABLE `producten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `producten` (`id`, `naam`, `prijs`, `beschrijving`, `afbeelding`) VALUES
-(0, 'Kraan Deluxe', 100.00, 'Onze beste kraan! Past perfect bij elk interieur', 'deluxe.jpg'),
-(1, 'Kraan Basis', 5.00, 'Kraan zonder poespas', 'basis.jpg'),
-(2, 'Geldkraan', 30.00, 'Lastig open te draaien, maar makkelijk om dicht te draaien. Betaalt zichzelf terug', 'geld.jpg'),
+(1, 'Kraan Deluxe', 100.00, 'Onze beste kraan! Past perfect bij elk interieur', 'deluxe.jpg'),
+(2, 'Kraan Basis', 5.00, 'Kraan zonder poespas', 'basis.jpg'),
+(3, 'Geldkraan', 30.00, 'Lastig open te draaien, maar makkelijk om dicht te draaien. Betaalt zichzelf terug', 'geld.jpg'),
 (4, 'Dubbel afsluitbare kraan', 40.00, 'Voor als u nog zekerder wilt zijn dat uw kraan niet lekt', 'kurk.jpg');
 
 
