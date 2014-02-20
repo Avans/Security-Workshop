@@ -65,7 +65,7 @@
 $connection = mysql_connect('localhost', 'webshop', 'pass')
     or die('Kan geen verbinding maken met MySQL');
 
-$db = mysql_select_db('webshop_sql1', $connection)
+$db = mysql_select_db('webshop', $connection)
   or die('Kan de database niet selecteren');
 
 
