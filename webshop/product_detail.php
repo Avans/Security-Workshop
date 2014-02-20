@@ -59,7 +59,8 @@ $connection = mysql_connect('localhost', 'webshop', 'pass')
 $db = mysql_select_db('webshop_sql1', $connection)
   or die('Could not select database');
 
-$query = 'SELECT naam, afbeelding, beschrijving, prijs FROM producten WHERE id = ' . $_GET['id'];
+$query = 'SELECT naam, afbeelding, beschrijving, prijs FROM producten WHERE id = ' . mysql_real_escape_string($_GET['id']);
+
 $result = mysql_query($query)
   or die('<div class="alert alert-danger">Query error: <pre>' . mysql_error() . '</pre>Query: <code>' . $query . '</code> </div>');
 
