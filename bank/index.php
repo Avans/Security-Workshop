@@ -66,7 +66,7 @@ if($_POST) {
          $row = mysql_fetch_array($result);
 
          echo "<div class=\"well\">Welkom terug " . $row['gebruikersnaam'] . "! ";
-         echo "Uw balans is op dit moment: <b>" . $row['balans'] . "</b></div>";
+         echo "Uw balans is op dit moment: <b>" . $row['balans'] . " euro</b></div>";
     }
     mysql_close($connection);
 } else {
