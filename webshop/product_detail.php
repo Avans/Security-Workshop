@@ -11,6 +11,9 @@
     <link href="/themes/css/base.css" rel="stylesheet" media="screen"/>
 	<link href="/themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
 	<link href="/themes/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+  <!-- De code in dit bestand is met opzet slecht en zeer onveilig opgezet.
+       GEBRUIK DEZE CODE NIET als referentiemateriaal voor je eigen PHP projecten! -->
   </head>
 
 <body>

@@ -11,6 +11,9 @@
     <link id="callCss" rel="stylesheet" href="/themes/css/bootstrap.min.css" media="screen"/>
 	<link href="/themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
   </head>
+  
+  <!-- De code in dit bestand is met opzet slecht en zeer onveilig opgezet.
+       GEBRUIK DEZE CODE NIET als referentiemateriaal voor je eigen PHP projecten! -->
 
 <body>
 <div id="header">
