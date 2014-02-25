@@ -11,7 +11,7 @@
     <link id="callCss" rel="stylesheet" href="/themes/css/bootstrap.min.css" media="screen"/>
 	<link href="/themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
   </head>
-  
+
   <!-- De code in dit bestand is met opzet slecht en zeer onveilig opgezet.
        GEBRUIK DEZE CODE NIET als referentiemateriaal voor je eigen PHP projecten! -->
 
@@ -42,36 +42,33 @@ if($_POST) {
     /**
      * Maak verbinding met de database
      */
-    $connection = mysql_connect('localhost', 'bank', 'pass')
+    $connection = new mysqli('localhost', 'bank', 'pass', 'bank')
         or die('Kan geen verbinding maken met MySQL');
-
-    $db = mysql_select_db('bank', $connection)
-      or die('Kan de database niet selecteren');
 
     /**
      * Zoek gebruiker in de database met de juiste gebruikersnaam en wachtwoord
      */
     $query = "SELECT * FROM gebruikers WHERE gebruikersnaam = '" . $_POST['gebruikersnaam'] . "' AND wachtwoord = '" . $_POST['wachtwoord'] . "'";
 
-    $result = mysql_query($query)
-      or die('<div class="alert alert-danger">Query error: <pre>' . mysql_error() . '</pre>Query: <code>' . $query . '</code> </div>');
+    $result = $connection->query($query)
+      or die('<div class="alert alert-danger">Query error: <pre>' . $connection->error . '</pre>Query: <code>' . $query . '</code> </div>');
 
     /**
      * Kijk of de query iets heeft teruggegeven. Anders geven we een error
      */
-    if(mysql_num_rows($result) == 0) {
+    if($result->num_rows == 0) {
        die('<div class="alert alert-danger">Inlog gegevens niet correct</div>');
     } else {
 
         /**
          * Gebruiker heeft correct ingelogd. Laat zijn balans zien
          */
-         $row = mysql_fetch_array($result);
+         $row = $result->fetch_array();
 
          echo "<div class=\"well\">Welkom terug " . $row['gebruikersnaam'] . "! ";
          echo "Uw balans is op dit moment: <b>" . $row['balans'] . " euro</b></div>";
     }
-    mysql_close($connection);
+    $connection->close();
 } else {
 
     /**

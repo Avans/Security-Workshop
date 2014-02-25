@@ -11,7 +11,7 @@
     <link href="/themes/css/base.css" rel="stylesheet" media="screen"/>
 	<link href="/themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
 	<link href="/themes/css/font-awesome.css" rel="stylesheet" type="text/css">
-	
+
   <!-- De code in dit bestand is met opzet slecht en zeer onveilig opgezet.
        GEBRUIK DEZE CODE NIET als referentiemateriaal voor je eigen PHP projecten! -->
   </head>
@@ -65,17 +65,13 @@
 /**
  * Maak verbinding met de database
  */
-$connection = mysql_connect('localhost', 'webshop', 'pass')
+$connection = new mysqli('localhost', 'webshop', 'pass', 'webshop')
     or die('Kan geen verbinding maken met MySQL');
 
-$db = mysql_select_db('webshop', $connection)
-  or die('Kan de database niet selecteren');
+$result = $connection->query("SELECT * FROM producten")
+  or die('Query error: ' . $connection->error);
 
-
-$result = mysql_query("SELECT * FROM producten")
-  or die('Query error: ' . mysql_error());
-
-while ($row = mysql_fetch_array($result)) {
+while ($row = $result->fetch_array()) {
 ?>
 
 			<li class="span3">
@@ -94,7 +90,7 @@ while ($row = mysql_fetch_array($result)) {
 <?php
 }
 
-mysql_close($connection);
+$connection->close();
 ?>
 		  </ul>
 	<hr class="soft"/>

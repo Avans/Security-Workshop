@@ -56,20 +56,17 @@
 /**
  * Maak verbinding met de database
  */
-$connection = mysql_connect('localhost', 'webshop', 'pass')
+$connection = new mysqli('localhost', 'webshop', 'pass', 'webshop')
     or die('Kan geen verbinding maken met MySQL');
 
-$db = mysql_select_db('webshop', $connection)
-  or die('Could not select database');
+$query = 'SELECT naam, afbeelding, beschrijving, prijs FROM producten WHERE id = ' . $connection->real_escape_string($_GET['id']);
 
-$query = 'SELECT naam, afbeelding, beschrijving, prijs FROM producten WHERE id = ' . mysql_real_escape_string($_GET['id']);
+$result = $connection->query($query)
+  or die('<div class="alert alert-danger">Query error: <pre>' . $connection->error . '</pre>Query: <code>' . $query . '</code> </div>');
 
-$result = mysql_query($query)
-  or die('<div class="alert alert-danger">Query error: <pre>' . mysql_error() . '</pre>Query: <code>' . $query . '</code> </div>');
+$row = $result->fetch_array();
 
-$row = mysql_fetch_array($result);
-
-mysql_close($connection);
+$connection->close();
 ?>
 
 <div class="row">
