@@ -6,5 +6,5 @@ De virtuele machine werkt! Lees de opgave om te beginnen met hacken.
 <a href="/bank/index_multi.php">Bank (multi_query)</a>
 
 <h2><a href="/webshop/">Webshop</a></h2>
-<a href="/webshop/product_detail_replace?id=1">Webshop (replace)</a>
+<a href="/webshop/product_detail_replace.php?id=1">Webshop (replace)</a>
 
