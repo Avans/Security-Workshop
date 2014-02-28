@@ -62,8 +62,8 @@ $connection = new mysqli('localhost', 'webshop', 'pass', 'webshop')
 $id = $_GET['id'];
 
 // Damn hackers, let's filter out all SELECT and UNION to be extra safe!
-$id = str_replace('SELECT', '', $id);
-$id = str_replace('UNION', '', $id);
+$id = str_ireplace('SELECT', '', $id);
+$id = str_ireplace('UNION', '', $id);
 
 $query = 'SELECT naam, afbeelding, beschrijving, prijs FROM producten WHERE id = ' . $connection->real_escape_string($id);
 
