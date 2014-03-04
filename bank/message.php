@@ -31,10 +31,6 @@
 	<div class="container">
 	<div class="row">
 
-
-    <p>Welkom bij de Poespas Bank. De bank die u kunt vertrouwen.</p>
-    <p>Vul alleen uw gegevens in als u zeker weet dat u zich op de echte Poespas site bevind. </p>
-
      <hr />
 
 <div class="alert alert-info">

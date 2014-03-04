@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+    header('X-XSS-Protection: 0'); // Disable XSS protection in modern browsers to allow the exercises to work
+    setcookie('session', md5('123456'));
+ ?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -49,49 +52,7 @@
 
 	<div class="span12">
 
-
-
-<?php
-
-/**
- * Maak verbinding met de database
- */
-$connection = new mysqli('localhost', 'webshop', 'pass', 'webshop')
-    or die('Kan geen verbinding maken met MySQL');
-
-$query = 'SELECT naam, afbeelding, beschrijving, prijs FROM producten WHERE id = ' . $connection->real_escape_string($_GET['id']);
-
-$result = $connection->query($query)
-  or die('<div class="alert alert-danger">Query error: <pre>' . $connection->error . '</pre>Query: <code>' . $query . '</code> </div>');
-
-$row = $result->fetch_array();
-
-$connection->close();
-?>
-
-<div class="row">
-
-		<div id="gallery" class="span3">
-		<a href="/webshop/image_zoom.php?image=<?php echo $row['afbeelding'] ?>">
-		 <img src="/themes/images/products/<?php echo $row['afbeelding'] ?>" style="width:100%"/>
-		</a>
-        </div>
-		<div class="span6">
-			<h3><?php echo $row['naam'] ?></h3>
-			<small><?php echo $row['beschrijving'] ?></small>
-			<hr class="soft"/>
-			<form class="form-horizontal qtyFrm">
-			  <div class="control-group">
-				<label class="control-label"><span>&euro;<?php echo $row['prijs'] ?></span></label>
-			</form>
-
-			<hr class="soft"/>
-			<h4>Dit item is op voorraad</h4>
-		</div>
-
-</div>
-
-
+        <img src='/themes/images/products/<?php echo htmlspecialchars($_GET['image']) ?>' style="width:50%; margin: 0 auto;"/>
 
 </div>
 </div>
