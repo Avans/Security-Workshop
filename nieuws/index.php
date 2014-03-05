@@ -1,9 +1,18 @@
 <?php
+header('X-XSS-Protection: 0');
 session_start();
 
 // Check if admin logged in
 if(@$_POST['email'] == 'admin@nieuws.nl' && @$_POST['password'] == 'sesame') {
     $_SESSION['admin'] = true;
+}
+
+$connection = new mysqli('localhost', 'nieuws', 'pass', 'nieuws')
+    or die('Kan geen verbinding maken met MySQL');
+
+// Add a comment
+if(isset($_POST['addcomment'])) {
+    $connection->query("INSERT INTO commentaar SET auteur='anoniem', bericht='".$connection->real_escape_string($_POST['comment'])."'");
 }
 ?><!DOCTYPE html>
 <html lang="en">
@@ -60,35 +69,36 @@ if(@$_SESSION['admin']) {
 
 <div id="comments">
     <strong>Jouw reactie:</strong>
-    <form method="POST" action="addcomment.php">
+    <form method="POST">
     <textarea name="comment"></textarea><br />
-    <button type="submit">Reageer op dit bericht</button>
+    <button type="submit" name="addcomment">Reageer op dit bericht</button>
     </form>
+<?php
+    $result = $connection->query("SELECT * FROM commentaar ORDER BY id DESC")
+      or die('Query error: ' . $connection->error);
+
+    while ($row = $result->fetch_array()) {
+    ?>
 
     <div class="comment">
       <div class="comment-header">
-        een tijdje geleden door <span class="author">Paul Wagener</span>
+        door <span class="author"><?php echo $row['auteur']; ?></span>
       </div>
-      <p>Hoera!</p>
+      <p><?php echo $row['bericht']; ?></p>
     </div>
 
-    <div class="comment">
-      <div class="comment-header">
-        een tijdje geleden door <span class="author">Paul Wagener</span>
-      </div>
-      <p>Hoera!</p>
-    </div>
+    <?php
+    }
+
+    $connection->close();
+    ?>
 
 </div>
 
 <hr>
 
 <div id="admincheck">
-    Problemen met de website? Laat het de administrator weten en hij komt een kijkje nemen op deze pagina!
-    <iframe name="iframe" style="display: none;"></iframe>
-    <form method="POST" target="iframe" action="admincheck.php">
-        <button type="btn btn-primary">Stuur een berichtje naar de admin.</button>
-    </form>
+    <a href="admincheck.php">Meld een probleem met deze website</a>
 </div>
 </section>
 </body>
