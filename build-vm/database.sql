@@ -1,4 +1,4 @@
--- Don't look here for answers you cheater. 
+-- Don't look here for answers you cheater.
 -- Go out there and actually hack those sites!
 
 
@@ -26,6 +26,7 @@ END ;$$
 DELIMITER ;
 CALL `temp`.`drop_user_if_exists`('webshop') ;
 CALL `temp`.`drop_user_if_exists`('bank') ;
+CALL `temp`.`drop_user_if_exists`('nieuws') ;
 DROP DATABASE temp;
 
 CREATE USER 'webshop'@'localhost' IDENTIFIED BY 'pass';
@@ -86,3 +87,19 @@ INSERT INTO `gebruikers` (`gebruikersnaam`, `wachtwoord`, `balans`) VALUES
 ('Bob', '123456', 10.00),
 ('Carol', 'cuteasabuttonintheeyes', 42.00);
 
+CREATE USER 'nieuws'@'localhost' IDENTIFIED BY 'pass';
+GRANT ALL PRIVILEGES ON  `nieuws`.* TO  'nieuws'@'localhost';
+
+DROP DATABASE IF EXISTS nieuws;
+CREATE DATABASE nieuws;
+USE nieuws;
+
+CREATE TABLE `commentaar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `auteur` varchar(255) NOT NULL,
+  `bericht` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+INSERT INTO `commentaar` (`id`, `auteur`, `bericht`) VALUES
+(1, 'Paul', 'Hoera!');
