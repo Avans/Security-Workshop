@@ -1,8 +1,15 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+// Check if admin logged in
+if(@$_POST['email'] == 'admin@nieuws.nl' && @$_POST['password'] == 'sesame') {
+    $_SESSION['admin'] = true;
+}
+?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Nieuws.nl</title>
+    <title>NIEUWS.nl</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Paul Wagener">
@@ -18,8 +25,16 @@
 <body>
 
 <img src="/themes/images/nieuws.png" id="logo">
-<section>
-<div id="datum">Woensdag 5 maart 2014. Het laatste nieuws het eerst op NIEUWS.nl</div>
+<section id="middle">
+<div id="datum"><?php setlocale(LC_ALL, 'nl_NL'); echo strftime("%A %e %B %Y"); ?>. Het laatste nieuws het eerst op NIEUWS.nl</div>
+
+<?php
+if(@$_SESSION['admin']) {
+?>
+<div class="alert alert-warning">
+    Welkom terug administrator! De geheime code is: "Setec Astronomy".
+</div>
+<?php }?>
 
 <div id="category">Algemeen / Binnenland</div>
 
@@ -43,7 +58,38 @@
     <span class="smallprint">Door:&nbsp;ANP</span>
 </article>
 
-</section>
+<div id="comments">
+    <strong>Jouw reactie:</strong>
+    <form method="POST" action="addcomment.php">
+    <textarea name="comment"></textarea><br />
+    <button type="submit">Reageer op dit bericht</button>
+    </form>
 
+    <div class="comment">
+      <div class="comment-header">
+        een tijdje geleden door <span class="author">Paul Wagener</span>
+      </div>
+      <p>Hoera!</p>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        een tijdje geleden door <span class="author">Paul Wagener</span>
+      </div>
+      <p>Hoera!</p>
+    </div>
+
+</div>
+
+<hr>
+
+<div id="admincheck">
+    Problemen met de website? Laat het de administrator weten en hij komt een kijkje nemen op deze pagina!
+    <iframe name="iframe" style="display: none;"></iframe>
+    <form method="POST" target="iframe" action="admincheck.php">
+        <button type="btn btn-primary">Stuur een berichtje naar de admin.</button>
+    </form>
+</div>
+</section>
 </body>
 </html>

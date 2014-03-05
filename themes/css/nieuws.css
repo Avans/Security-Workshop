@@ -1,5 +1,4 @@
 body {
-    font-size: 62.5%;
     font-family: Arial,helvetica,sans-serif;
 }
 
@@ -15,13 +14,14 @@ article img {
     margin-right: 15px;
 }
 
-section {
+section#middle {
     float: left;
     width: 600px;
 }
 
 #datum {
     height: 30px;
+    font-size: 11px;
     line-height: 28px;
     color: #05054c;
     border-top: 1px dotted black;
@@ -34,7 +34,7 @@ section {
     height: 24px;
     line-height: 24px;
     color: white;
-    font-size: 1.5em;
+    font-size: 15px;
     font-weight: bold;
     padding-left: 5px;
 
@@ -50,6 +50,11 @@ section {
     background-image: -webkit-linear-gradient(bottom, #98C4E5 0%, #7AA2C1 100%);
     background-image: -ms-linear-gradient(bottom, #98C4E5 0%, #7AA2C1 100%);
     background-image: linear-gradient(to bottom, #98C4E5 0%, #7AA2C1 100%);
+}
+
+textarea {
+    width: 60%;
+    height: 100px;
 }
 
 article {
@@ -86,4 +91,31 @@ p {
 a {
     color: rgb(2, 0, 81);
     text-decoration: underline;
+}
+
+.comment {
+    border: 1px solid rgb(217, 226, 240);
+    margin-bottom: 10px;
+}
+
+.comment-header {
+    background-color: rgb(217, 226, 240);
+    color: rgb(71, 91, 117);
+    font-size: 11px;
+    padding: 2px;
+    padding-left: 20px;
+}
+
+.comment-header .author {
+    color: rgb(57, 73, 95);
+    font-weight: bold;
+}
+
+.comment p {
+    margin: 0;
+    padding: 10px;
+}
+
+#admincheck {
+    margin-top: 20px;
 }
