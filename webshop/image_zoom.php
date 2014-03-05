@@ -1,6 +1,6 @@
 <?php
     header('X-XSS-Protection: 0'); // Disable XSS protection in modern browsers to allow the exercises to work
-    setcookie('session', md5('123456'));
+    session_start(); // Start a fake session
  ?><!DOCTYPE html>
 <html lang="en">
   <head>
