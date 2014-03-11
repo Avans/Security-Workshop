@@ -81,7 +81,7 @@ $connection->close();
 		 <img src="/themes/images/products/<?php echo $row['afbeelding'] ?>" style="width:100%"/>
         </div>
 		<div class="span6">
-			<h3><?php echo $row['naam'] ?></h3>
+			<h3><?php echo $row['naam'] ?> (replace)</h3>
 			<small><?php echo $row['beschrijving'] ?></small>
 			<hr class="soft"/>
 			<form class="form-horizontal qtyFrm">
