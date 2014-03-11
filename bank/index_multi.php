@@ -84,7 +84,7 @@ if($_POST) {
     <div class="span4 signin-container">
 
          <form class="form-signin" method="POST">
-             <h3 class="form-signin-heading">Inloggen Mijn Poespas</h3>
+             <h3 class="form-signin-heading">Inloggen Mijn Poespas (multiquery)</h3>
              <input type="text" name="gebruikersnaam" class="input-block-level" placeholder="Gebruikersnaam">
              <input type="text" name="wachtwoord" class="input-block-level" placeholder="Wachtwoord">
          <button class="btn btn-primary" type="submit">Inloggen</button>
