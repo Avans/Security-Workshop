@@ -78,7 +78,9 @@ $connection->close();
 <div class="row">
 
 		<div id="gallery" class="span3">
+		<a href="/webshop/image_zoom.php?image=<?php echo $row['afbeelding'] ?>">
 		 <img src="/themes/images/products/<?php echo $row['afbeelding'] ?>" style="width:100%"/>
+		 </a>
         </div>
 		<div class="span6">
 			<h3><?php echo $row['naam'] ?> (replace)</h3>
