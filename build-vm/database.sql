@@ -103,3 +103,22 @@ CREATE TABLE `commentaar` (
 
 INSERT INTO `commentaar` (`id`, `auteur`, `bericht`) VALUES
 (1, 'Paul', 'Hoera!');
+
+
+CREATE TABLE `gebruikers` (
+  `gebruikersnaam` varchar(255) NOT NULL,
+  `wachtwoord` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `gebruikers` (`gebruikersnaam`, `wachtwoord`) VALUES
+('Hank', 'eb25f9edd38c8ac53380cb5d898dd2e0a33921b1'),
+('John', 'eb25f9edd38c8ac53380cb5d898dd2e0a33921b1'),
+('Pete', 'eb25f9edd38c8ac53380cb5d898dd2e0a33921b1'),
+('Bob', 'eb25f9edd38c8ac53380cb5d898dd2e0a33921b1'),
+('Thomas', 'eb25f9edd38c8ac53380cb5d898dd2e0a33921b1'),
+('Hansel', 'eb25f9edd38c8ac53380cb5d898dd2e0a33921b1'),
+('William', 'eb25f9edd38c8ac53380cb5d898dd2e0a33921b1'),
+('Harry', 'eb25f9edd38c8ac53380cb5d898dd2e0a33921b1'),
+('Martin', 'eb25f9edd38c8ac53380cb5d898dd2e0a33921b1'),
+('Charles', 'eb25f9edd38c8ac53380cb5d898dd2e0a33921b1'),
+('Admin', 'b56261f2bd5e758a55a1865c1b54e7ed947253e5');
