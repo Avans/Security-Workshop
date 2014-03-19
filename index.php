@@ -12,4 +12,4 @@ De virtuele machine werkt! Lees de opgave om te beginnen met hacken.
 <a href="/nieuws/login.php">Nieuws (login)</a>
 
 <hr>
-<footer>Laatste update: 19 maart 2014</footer>
+<footer>Laatste update: <?php echo `git log -1 --format="%cd"`; ?></footer>
