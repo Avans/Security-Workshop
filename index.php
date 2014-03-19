@@ -8,3 +8,8 @@ De virtuele machine werkt! Lees de opgave om te beginnen met hacken.
 <a href="/webshop/product_detail_replace.php?id=1">Webshop (replace)</a>
 
 <h2><a href="/nieuws/">Nieuws</a></h2>
+<a href="/nieuws/users.php">Nieuws (users)</a><br>
+<a href="/nieuws/login.php">Nieuws (login)</a>
+
+<hr>
+<footer>Laatste update: 19 maart 2014</footer>

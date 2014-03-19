@@ -2,11 +2,6 @@
 header('X-XSS-Protection: 0');
 session_start();
 
-// Check if admin logged in
-if(@$_POST['email'] == 'admin@nieuws.nl' && @$_POST['password'] == 'sesame') {
-    $_SESSION['admin'] = true;
-}
-
 $connection = new mysqli('localhost', 'nieuws', 'pass', 'nieuws')
     or die('Kan geen verbinding maken met MySQL');
 
@@ -38,12 +33,16 @@ if(isset($_POST['addcomment'])) {
 <div id="datum"><?php setlocale(LC_ALL, 'nl_NL'); echo strftime("%A %e %B %Y"); ?>. Het laatste nieuws het eerst op NIEUWS.nl</div>
 
 <?php
-if(@$_SESSION['admin']) {
+
+if(isset($_SESSION['gebruikersnaam']))
+    echo '<div class="alert alert-info">Je bent nu ingelogd als '.$_SESSION['gebruikersnaam'].'</div>';
+
+
+if(isset($_SESSION['admin']))
+    echo '<div class="alert alert-warning">Welkom terug administrator! De geheime code is: "Setec Astronomy".</div>';
+
 ?>
-<div class="alert alert-warning">
-    Welkom terug administrator! De geheime code is: "Setec Astronomy".
-</div>
-<?php }?>
+
 
 <div id="category">Algemeen / Binnenland</div>
 
