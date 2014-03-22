@@ -62,7 +62,7 @@ if($_POST) {
       }
       ?>
       <input name="gebruikersnaam" class="input-block-level" placeholder="Gebruikersnaam">
-      <input name="wachtwoord" type="pasword" class="input-block-level" placeholder="Wachtwoord">
+      <input name="wachtwoord" type="password" class="input-block-level" placeholder="Wachtwoord">
 
       <button type="submit" class="btn btn-primary">Inloggen</button>
   </form>
