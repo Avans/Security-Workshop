@@ -23,8 +23,6 @@
 <div id="header">
 <div class="container">
 
-<div id="welcomeLine" class="row">
-</div>
 
 <!-- Navbar ================================================== -->
 <div id="logoArea" class="navbar">
@@ -37,9 +35,6 @@
     <a class="brand" href="/webshop"><img src="/themes/images/logo.png" alt="Leaky's Kranen Emporium"/></a>
 		<form class="form-inline navbar-search" method="post" action="products.html" >
     </form>
-    <ul id="topMenu" class="nav pull-right">
-
-    </ul>
   </div>
 </div>
 </div>
@@ -54,6 +49,8 @@
 
         <img src="/themes/images/products/<?php echo $_GET['image'] ?>" style="width:50%; margin: 0 auto;"/>
 
+</div>
+</div>
 </div>
 </div>
 <!-- MainBody End ============================= -->

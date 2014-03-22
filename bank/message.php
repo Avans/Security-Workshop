@@ -38,14 +38,10 @@
     echo $_GET['m'];
 ?>
 </div>
-		  </ul>
 	<hr class="soft"/>
 	</div>
 </div>
 
-</div>
-</div>
-</div>
 </div>
 <!-- MainBody End ============================= -->
 </body>

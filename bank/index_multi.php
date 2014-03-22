@@ -94,14 +94,10 @@ if($_POST) {
 <?php
 }
 ?>
-		  </ul>
 	<hr class="soft"/>
 	</div>
 </div>
 
-</div>
-</div>
-</div>
 </div>
 <!-- MainBody End ============================= -->
 </body>
