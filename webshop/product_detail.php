@@ -83,6 +83,7 @@ $connection->close();
 			<form class="form-horizontal qtyFrm">
 			  <div class="control-group">
 				<label class="control-label"><span>&euro;<?php echo $row['prijs'] ?></span></label>
+                          </div>
 			</form>
 
 			<hr class="soft"/>
@@ -93,6 +94,8 @@ $connection->close();
 
 
 
+</div>
+</div>
 </div>
 </div>
 <!-- MainBody End ============================= -->
