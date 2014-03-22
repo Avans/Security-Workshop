@@ -38,7 +38,6 @@
     echo $_GET['m'];
 ?>
 </div>
-		  </ul>
 	<hr class="soft"/>
 	</div>
 </div>

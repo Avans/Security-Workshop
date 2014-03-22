@@ -94,7 +94,6 @@ if($_POST) {
 <?php
 }
 ?>
-		  </ul>
 	<hr class="soft"/>
 	</div>
 </div>
