@@ -5,6 +5,7 @@ echo
 cd /home/security/workshop
 
 # Update repository
+git clean -f
 git pull origin master
 
 # Update Apache configuration
@@ -12,6 +13,9 @@ cp build-vm/security-workshop.apache.conf /etc/apache2/sites-available/security-
 a2dissite 000-default
 a2ensite security-workshop
 service apache2 reload
+
+# Update permissions
+chmod o+w image/uploads
 
 # Update database
 echo "Resetting database"
