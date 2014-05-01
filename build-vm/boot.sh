@@ -13,6 +13,9 @@ a2dissite 000-default
 a2ensite security-workshop
 service apache2 reload
 
+# Updating permissions
+chmod o+w image/uploads
+
 # Update database
 echo "Resetting database"
 mysql -u root < build-vm/database.sql
