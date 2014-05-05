@@ -14,8 +14,9 @@ a2dissite 000-default
 a2ensite security-workshop
 service apache2 reload
 
-# Update permissions
+# Prepare image site
 chmod o+w image/uploads
+echo "TODO: Fix AE-35 Unit" > /etc/geheim.txt
 
 # Update database
 echo "Resetting database"
