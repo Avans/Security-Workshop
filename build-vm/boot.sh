@@ -15,6 +15,8 @@ service apache2 reload
 
 # Prepare image site
 chmod o+w image/uploads
+cp -R image/uploads ..
+chmod o+w ../uploads
 echo "TODO: Fix AE-35 Unit" > /etc/geheim.txt
 
 # Update database
