@@ -25,7 +25,7 @@ if($_FILES) {
         <div class="header">The <em>meest recente</em> plaatjes van vandaag:</div>
         <?php
         foreach ( glob('uploads/*') as $image ) {
-            echo '<a href="image.php?file='.$image.'"><img src="'.$image.'"></a>';
+            echo '<a href="'.$image.'"><img src="'.$image.'"></a>';
         }
         ?>
     </div>

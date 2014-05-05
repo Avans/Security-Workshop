@@ -5,6 +5,7 @@ echo
 cd /home/security/workshop
 
 # Update repository
+git clean -f
 git pull origin master
 
 # Update Apache configuration
