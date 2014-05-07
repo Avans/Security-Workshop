@@ -22,7 +22,7 @@ if($_FILES) {
     </div>
 
     <div class="panel span6 offset1 images">
-        <div class="header">The <em>meest recente</em> plaatjes van vandaag:</div>
+        <div class="header">De <em>meest recente</em> plaatjes van vandaag:</div>
         <?php
         foreach ( glob('../../uploads/*') as $image ) {
             $image = 'image.php?file=uploads/' . basename($image);
