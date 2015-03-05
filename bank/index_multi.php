@@ -21,7 +21,7 @@
 
 <!-- Navbar ================================================== -->
 <div id="logoArea" class="navbar">
-    <a class="brand" href="/bank"><img src="/themes/images/poespas.png" title="De bank die u kunt vertrouwen"></a>
+    <a class="brand" href="/bank/index_multi.php"><img src="/themes/images/poespas.png" title="De bank die u kunt vertrouwen"></a>
 </div>
 </div>
 </div>

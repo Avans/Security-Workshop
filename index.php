@@ -7,6 +7,8 @@ De virtuele machine werkt! Lees de opgave om te beginnen met hacken.
 <h2><a href="/webshop/">Webshop</a></h2>
 <a href="/webshop/product_detail_replace.php?id=1">Webshop (replace)</a>
 
+<h2><a href="/wereldwijs/index.php?id=1">Wereldwijs</a></h2>
+
 <h2><a href="/nieuws/">Nieuws</a></h2>
 <a href="/nieuws/users.php">Nieuws (users)</a><br>
 <a href="/nieuws/login.php">Nieuws (login)</a>
