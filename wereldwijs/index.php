@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Wereldwiki</title>
+    <title>Wereldwijs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Paul Wagener">
@@ -37,9 +37,9 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="wiki.php?id=1">Frankrijk</a></li>
-        <li><a href="wiki.php?id=2">Nederland</a></li>
-        <li><a href="wiki.php?id=3">Duitsland</a></li>
+        <li><a href="index.php?id=1">Frankrijk</a></li>
+        <li><a href="index.php?id=2">Nederland</a></li>
+        <li><a href="index.php?id=3">Duitsland</a></li>
       </ul>
     </div>
   </div>
