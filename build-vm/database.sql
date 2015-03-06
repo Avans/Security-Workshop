@@ -129,6 +129,10 @@ INSERT INTO `gebruikers` (`gebruikersnaam`, `wachtwoord`) VALUES
 CREATE USER 'wiki'@'localhost' IDENTIFIED BY 'pass';
 GRANT ALL PRIVILEGES ON  `wiki`.* TO  'wiki'@'localhost';
 
+DROP DATABASE IF EXISTS wiki;
+CREATE DATABASE wiki;
+USE wiki;
+
 CREATE TABLE `paginas` (
   `id` int(11) NOT NULL,
   `secret` int(11) NOT NULL,
