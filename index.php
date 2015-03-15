@@ -11,7 +11,10 @@ De virtuele machine werkt! Lees de opgave om te beginnen met hacken.
 <a href="/webshop/product_detail_replace.php?id=1">Webshop (replace)</a>
 </p>
 
-<p><a href="/wereldwijs/index.php?id=1">Wereldwijs</a></p>
+<p>
+<a href="/wereldwijs/index.php?id=1">Wereldwijs</a><br />
+<a href="/wereldwijs/index_xss.php">Wereldwijs (XSS)</a>
+</p>
 
 <p>
 <a href="/nieuws/">Nieuws</a><br>
