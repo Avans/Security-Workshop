@@ -4,7 +4,7 @@ $result = $connection->query("SELECT * FROM gebruikers WHERE gebruikersnaam = 'B
 $row = $result->fetch_array();
 echo "Bob heeft: " . $row['balans'] . "<br>";
 
-if ((int)$row['balans'] >= 1000000) {
+if ((int)$row['balans'] >= 10000) {
     echo "Bob is miljonair<br>";
 }
 
