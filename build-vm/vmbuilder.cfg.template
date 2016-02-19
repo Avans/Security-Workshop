@@ -8,7 +8,7 @@ execscript = BUILDDIR/vmbuilder.postinst
 verbose = true
 
 [ubuntu]
-suite = saucy
+suite = trusty
 flavour = virtual
 addpkg = linux-image-generic, apache2, git-core, phantomjs, php5-cli, php5-mysql, libapache2-mod-php5, mysql-server, mysql-client
 hostname = security-workshop
